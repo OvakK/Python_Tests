@@ -1,5 +1,4 @@
 # This is a calculator function
-
 def calculator(expression):
     allowed = '+-/*'
     if not any(sign in expression for sign in allowed):
