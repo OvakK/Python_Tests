@@ -1,3 +1,5 @@
+# This is a calculator function
+
 def calculator(expression):
     allowed = '+-/*'
     if not any(sign in expression for sign in allowed):
@@ -9,11 +11,11 @@ def calculator(expression):
                 left, right = int(left), int(right)
                 if sign == '+':
                     return left + right
-                elif sign == '-':
+                if sign == '-':
                     return left - right
-                elif sign == '*':
+                if sign == '*':
                     return left * right
-                elif sign == '/':
+                if sign == '/':
                     return left / right
             except ValueError:
                 raise ValueError('Expression must contain 2 integers and 1 sign')
