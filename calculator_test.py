@@ -5,7 +5,7 @@ from calculator import calculator
 class CalculatorTest(unittest.TestCase):
 
     def test_plus(self):
-        self.assertEqual(calculator('2+2'), 5)
+        self.assertEqual(calculator('2+2'), 4)
 
     def test_minus(self):
         self.assertEqual(calculator('5-3'), 2)
@@ -16,7 +16,6 @@ class CalculatorTest(unittest.TestCase):
     def test_divde(self):
         self.assertEqual(calculator('9/3'), 3)
 
-############################################
     def test_true(self):
         self.assertTrue(calculator('5+5'))
 
@@ -40,10 +39,6 @@ class CalculatorTest(unittest.TestCase):
 
     def test_notin(self):
         self.assertNotIn(calculator('5+2'), [1, 2, 3])
-
-#########################################################################
-
-
 
     def test_no_signs(self):
         with self.assertRaises(ValueError) as e:
