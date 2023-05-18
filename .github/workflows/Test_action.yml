@@ -29,3 +29,8 @@ jobs:
          pytest --version    
     - name: Test with pytest
       run: pytest -rp calculator_pytest.py
+      
+    run_calculator:
+      needs: [ unittest, pytest ]
+      
+      
