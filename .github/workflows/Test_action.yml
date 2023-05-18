@@ -30,6 +30,7 @@ jobs:
       
       
   unittest:
+    needs: [ pytest ]
     runs-on: ubuntu-latest
     steps:
     - name: Timeout
