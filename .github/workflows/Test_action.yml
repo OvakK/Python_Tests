@@ -23,11 +23,8 @@ jobs:
        git push
         
   pytest:
-    needs: [ unittest ]
     runs-on: ubuntu-latest
     steps:
-    - name: Timeout
-      run: sleep 30
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -40,13 +37,6 @@ jobs:
          pytest --version    
     - name: Test with pytest
       run: pytest -rp calculator_pytest.py > Pytests${{github.run_number}}.txt
-    - name: Change test results
-      run: |
-       git config --global user.name "OvakK"
-       git config --global user.email "kovak5063@gmail.com"
-       git add Pytests${{github.run_number}}.txt
-       git commit -m "Test number ${{github.run_number}}"
-       git push
       
   run_calculator:
     needs: [ unittest, pytest ]
