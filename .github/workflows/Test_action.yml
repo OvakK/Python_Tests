@@ -30,7 +30,11 @@ jobs:
     - name: Test with pytest
       run: pytest -rp calculator_pytest.py
       
-    run_calculator:
-      needs: [ unittest, pytest ]
+  run_calculator:
+    needs: [ unittest, pytest ]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run calculator
+      run: python calculator.py
       
       
