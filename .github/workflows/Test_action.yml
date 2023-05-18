@@ -23,7 +23,7 @@ jobs:
       run: |
        git config --global user.name "OvakK"
        git config --global user.email "kovak5063@gmail.com"
-       git add Pytests.txt
+       git add Pytests${{github.run_number}}.txt
        git commit -m "Test number ${{github.run_number}}"
        git push
       
