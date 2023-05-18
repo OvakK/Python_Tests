@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        feth-depth: 0
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
@@ -19,12 +21,16 @@ jobs:
          pytest --version    
     - name: Test with pytest
       run: pytest -rp calculator_pytest.py > Pytests${{github.run_number}}.txt
-    - name: GitHub Push
-      uses: ad-m/github-push-action@v0.6.0
+    - name: Commit files
+      run: |
+        git config --local user.email "kovak5063@gmail.com"
+        git config --local user.name "OvakK"
+        git commit -a -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
-        force: true
+        branch: ${{ github.ref }}
       
       
       
@@ -52,6 +58,9 @@ jobs:
 #       uses: ad-m/github-push-action@master
 #       with:
 #         force_with_lease: true
+      
+      
+      
       
 #   run_calculator:
 #     needs: [ unittest, pytest ]
