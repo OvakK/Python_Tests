@@ -19,6 +19,15 @@ jobs:
          pytest --version    
     - name: Test with pytest
       run: pytest -rp calculator_pytest.py > Pytests${{github.run_number}}.txt
+    - name: Change test results
+      run: |
+       git config --global user.name "OvakK"
+       git config --global user.email "kovak5063@gmail.com"
+       git add Pytests.txt
+       git commit -m "Test number ${{github.run_number}}"
+       git push
+      
+      
       
   unittest:
     runs-on: ubuntu-latest
