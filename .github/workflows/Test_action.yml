@@ -1,5 +1,4 @@
 name: Python unittest
-permissions: write-all
 
 on:
   workflow_dispatch:
