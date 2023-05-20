@@ -1,5 +1,5 @@
 name: Python tests
-# permissions: write-all
+permissions: write-all
 
 on:
   workflow_dispatch:
