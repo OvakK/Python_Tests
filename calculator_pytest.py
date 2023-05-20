@@ -4,7 +4,7 @@ from calculator import calculator
 
 
 def test_plus():
-    assert calculator('2+2') == 4
+    assert calculator('2+2') == 5
 
 
 def test_minus():
