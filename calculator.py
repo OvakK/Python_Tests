@@ -1,8 +1,4 @@
 # This is a calculator function
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument('expr', type=str)
-args = parser.parse_args()
 
 
 def calculator(expression):
@@ -29,4 +25,4 @@ def calculator(expression):
 
 
 if __name__ == '__main__':
-    print(calculator(args.expr))
+    print(calculator('2+5'))
