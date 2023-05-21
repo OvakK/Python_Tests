@@ -44,7 +44,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Print ${{ env.my_variable }} my_variable
-      run: echo ${{ env.my_variable }}
+      run: echo "${{ env.my_variable }}"
     - name: Run calculator
       run: python calculator.py
       
