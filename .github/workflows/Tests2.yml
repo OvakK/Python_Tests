@@ -46,6 +46,6 @@ jobs:
     - name: Print ${{ env.my_variable }} my_variable
       run: echo "${{ env.my_variable }}"
     - name: Run calculator
-      run: python calculator.py
+      run: python calculator.py ${{ env.my_variable }}
       
       
