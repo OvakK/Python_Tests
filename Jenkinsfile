@@ -46,10 +46,23 @@ pipeline {
                 sh "python3 calculator.py"
             }
         }
-    }   
+    }
+    
     post {
         always {
             echo "Number of this build ${BUILD_NUMBER}"
+            echo "This build id is ${BUILD_ID}"
+            echo "This build tag is ${BUILD_TAG}"      
+        }
+        
+        failure {
+            echo "My Jenkins url is ${JENKINS_URL}"
+            echo "My jobe name is ${JOB_NAME}"
+        }
+        
+        success {
+            echo "----------------------------------"
+            echo "My node name is ${NODE_NAME}"
         }
     }
 }
