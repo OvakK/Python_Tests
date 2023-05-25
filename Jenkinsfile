@@ -1,6 +1,10 @@
 pipeline {
     
-    agent { python }
+    agent {
+        node {
+            label 'puthon'
+        }
+    }
 
     environment {
         HELLO_MESSAGE = 'Barevki'
