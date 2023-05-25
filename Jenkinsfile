@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo "Hello World from Jenkins"
                 echo "building version ${HELLO_MESSAGE}"
-                sh 'python --version'
+                sh 'python3 --version'
             }
         }
 
