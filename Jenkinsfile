@@ -31,9 +31,6 @@ pipeline {
         }
         
         stage("Unittest") { 
-            when {
-              expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            }
             steps {
                 echo "This is Unittest stage"
                 sh "python3 -m unittest -v calculator_unittest.py"
@@ -41,6 +38,9 @@ pipeline {
         }
         
         stage("Deploy") { 
+            when {
+              expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
+            }
             steps {
                 echo "This is Deployment stage"
                 sh "python3 calculator.py"
