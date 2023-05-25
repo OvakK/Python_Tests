@@ -46,5 +46,10 @@ pipeline {
                 sh "python3 calculator.py"
             }
         }
+    post {
+        always {
+            echo "Number of this build ${BUILD_NUMBER}"
+        }
+    }
     }
 }
