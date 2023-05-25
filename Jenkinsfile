@@ -1,6 +1,6 @@
 pipeline {
     
-    agent python
+    agent { python }
 
     environment {
         HELLO_MESSAGE = 'Barevki'
